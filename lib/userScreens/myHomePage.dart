@@ -67,13 +67,13 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.all(20),
+            padding: EdgeInsets.all(10),
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.orange,
               ),
-              padding: EdgeInsets.all(10),
+              padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
               child: Stack(
                 alignment: Alignment.center,
                 children: <Widget>[
@@ -115,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     alignment: Alignment.topLeft,
                     children: <Widget>[
                       Stack(
-                        alignment: FractionalOffset.bottomCenter,
+                        alignment: Alignment.bottomCenter,
                         children: <Widget>[
                           Container(
                             decoration: BoxDecoration(
@@ -150,29 +150,39 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ],
                       ),
-                      Container(
-                        decoration: BoxDecoration(
-                            color: Colors.deepOrange.withAlpha(200),
-                            borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(10),
-                              bottomRight: Radius.circular(10),
-                            )),
-                        height: 30,
-                        width: 60,
-                        child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: <Widget>[
-                              Icon(
-                                Icons.favorite,
-                                color: Colors.white,
-                                size: 20,
-                              ),
-                              Text(
-                                ' ${storeItems[index].itemRating}',
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 12),
-                              )
-                            ]),
+
+                      Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Container(
+                            decoration: BoxDecoration(
+                                color: Colors.deepOrange.withAlpha(200),
+                                borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(10),
+                                  bottomRight: Radius.circular(10),
+                                )),
+                            height: 30,
+                            width: 60,
+                            child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: <Widget>[
+                                  Icon(
+                                    Icons.star,
+                                    color: Colors.white,
+                                    size: 20,
+                                  ),
+                                  Text(
+                                    ' ${storeItems[index].itemRating}',
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 12),
+                                  )
+                                ]),
+                          ),
+
+                          Container(
+                            child: Icon(Icons.favorite,color: Colors.white,),
+                          )
+
+                        ],
                       ),
                     ],
                   ),

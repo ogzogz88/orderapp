@@ -9,9 +9,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Pizzacım',
+      title: 'Pizzacımız',
+
 
       theme: ThemeData(
+
 
         primarySwatch: Colors.deepOrange,
         fontFamily: 'Raleway',

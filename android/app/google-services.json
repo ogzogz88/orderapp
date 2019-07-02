@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "395784592218",
+    "firebase_url": "https://pizzasiparis-74fe4.firebaseio.com",
+    "project_id": "pizzasiparis-74fe4",
+    "storage_bucket": "pizzasiparis-74fe4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:395784592218:android:86f8df71b11d03ce",
+        "android_client_info": {
+          "package_name": "net.sibumi.orderapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "395784592218-krpnb24dlisn5ggnrdfqo6v52ekg59e7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.sibumi.orderapp",
+            "certificate_hash": "0f2892ca423c00723a21243d328d00247f8504b6"
+          }
+        },
+        {
+          "client_id": "395784592218-v7ha3k7hdlftj26tqqgn6qdrne11t7uf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKK0-Sd4JNvmsbYcsxbfNDvlmB25ygG3U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "395784592218-v7ha3k7hdlftj26tqqgn6qdrne11t7uf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
