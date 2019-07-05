@@ -246,108 +246,110 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       drawer: Drawer(
-        child: Column(
-          children: <Widget>[
-            UserAccountsDrawerHeader(
-                currentAccountPicture: CircleAvatar(
-                  child: Icon(Icons.person),
-                  backgroundColor: Colors.yellow,
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              UserAccountsDrawerHeader(
+                  currentAccountPicture: CircleAvatar(
+                    child: Icon(Icons.person),
+                    backgroundColor: Colors.yellow,
+                  ),
+                  accountName: Text('Oğuzhan ALAGÖZ'),
+                  accountEmail: Text('ogzogz88@gmail.com')),
+              ListTile(
+                leading: CircleAvatar(
+                  child: Icon(
+                    Icons.notifications,
+                    color: Colors.white,
+                    size: 20,
+                  ),
                 ),
-                accountName: Text('Oğuzhan ALAGÖZ'),
-                accountEmail: Text('ogzogz88@gmail.com')),
-            ListTile(
-              leading: CircleAvatar(
-                child: Icon(
-                  Icons.notifications,
-                  color: Colors.white,
-                  size: 20,
-                ),
+                title: Text('Sipariş Bildirimi'),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (BuildContext) => PizzaBildirim()));
+                },
               ),
-              title: Text('Sipariş Bildirimi'),
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext) => PizzaBildirim()));
-              },
-            ),
-            ListTile(
-              leading: CircleAvatar(
-                child: Icon(
-                  Icons.history,
-                  color: Colors.white,
-                  size: 20,
+              ListTile(
+                leading: CircleAvatar(
+                  child: Icon(
+                    Icons.history,
+                    color: Colors.white,
+                    size: 20,
+                  ),
                 ),
+                title: Text('Sipariş Geçmişi'),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (BuildContext) => PizzaHistory()));
+                },
               ),
-              title: Text('Sipariş Geçmişi'),
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext) => PizzaHistory()));
-              },
-            ),
-            Divider(
-              color: Colors.deepOrangeAccent,
-              height: 2,
-            ),
-            ListTile(
-              leading: CircleAvatar(
-                child: Icon(
-                  Icons.person,
-                  color: Colors.white,
-                  size: 20,
+              Divider(
+                color: Colors.deepOrangeAccent,
+                height: 2,
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  child: Icon(
+                    Icons.person,
+                    color: Colors.white,
+                    size: 20,
+                  ),
                 ),
+                title: Text('Profil Ayarları'),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (BuildContext) => PizzaProfil()));
+                },
               ),
-              title: Text('Profil Ayarları'),
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext) => PizzaProfil()));
-              },
-            ),
-            ListTile(
-              leading: CircleAvatar(
-                child: Icon(
-                  Icons.home,
-                  color: Colors.white,
-                  size: 20,
+              ListTile(
+                leading: CircleAvatar(
+                  child: Icon(
+                    Icons.home,
+                    color: Colors.white,
+                    size: 20,
+                  ),
                 ),
+                title: Text('Teslimat Adresi'),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (BuildContext) => PizzaTeslim()));
+                },
               ),
-              title: Text('Teslimat Adresi'),
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext) => PizzaTeslim()));
-              },
-            ),
-            Divider(
-              color: Colors.deepOrangeAccent,
-              height: 2,
-            ),
-            ListTile(
-              trailing: CircleAvatar(
-                child: Icon(
-                  Icons.help,
-                  color: Colors.white,
-                  size: 20,
+              Divider(
+                color: Colors.deepOrangeAccent,
+                height: 2,
+              ),
+              ListTile(
+                trailing: CircleAvatar(
+                  child: Icon(
+                    Icons.help,
+                    color: Colors.white,
+                    size: 20,
+                  ),
                 ),
+                title: Text('Hakkımızda'),
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => Hakkimizda()));
+                },
               ),
-              title: Text('Hakkımızda'),
-              onTap: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => Hakkimizda()));
-              },
-            ),
-            ListTile(
-              trailing: CircleAvatar(
-                child: Icon(
-                  Icons.exit_to_app,
-                  color: Colors.white,
-                  size: 20,
+              ListTile(
+                trailing: CircleAvatar(
+                  child: Icon(
+                    Icons.exit_to_app,
+                    color: Colors.white,
+                    size: 20,
+                  ),
                 ),
+                title: Text('Çıkış'),
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => LoginLogout()));
+                },
               ),
-              title: Text('Çıkış'),
-              onTap: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => LoginLogout()));
-              },
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

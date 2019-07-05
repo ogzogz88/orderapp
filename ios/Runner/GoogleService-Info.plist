@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>395784592218-mm8lv5odvetj9g27vi07pop2uht2mldv.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.395784592218-mm8lv5odvetj9g27vi07pop2uht2mldv</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>395784592218-krpnb24dlisn5ggnrdfqo6v52ekg59e7.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBNMQ4kZvM1fUWd6Xj3cXnWQQ96oVzwwDM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>395784592218</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>net.sibumi.orderapp</string>
+	<key>PROJECT_ID</key>
+	<string>pizzasiparis-74fe4</string>
+	<key>STORAGE_BUCKET</key>
+	<string>pizzasiparis-74fe4.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:395784592218:ios:86f8df71b11d03ce</string>
+	<key>DATABASE_URL</key>
+	<string>https://pizzasiparis-74fe4.firebaseio.com</string>
+</dict>
+</plist>
