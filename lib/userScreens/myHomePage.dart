@@ -9,7 +9,7 @@ import 'notification.dart';
 import 'history.dart';
 import 'delivery.dart';
 import 'aboutUs.dart';
-import 'loginLogout.dart';
+import 'login.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -342,7 +342,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     size: 20,
                   ),
                 ),
-                title: Text('Çıkış'),
+                title: Text('Giriş Yap'),
                 onTap: () {
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => LoginLogout()));

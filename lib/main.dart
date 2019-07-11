@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'userScreens/myHomePage.dart';
 
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Pizzacımız',
+      title: 'Pizzacım',
 
 
       theme: ThemeData(
