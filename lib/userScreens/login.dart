@@ -13,7 +13,7 @@ class LoginLogout extends StatefulWidget {
 class _LoginLogoutState extends State<LoginLogout> {
   TextEditingController emailCont = new TextEditingController();
   TextEditingController passwordCont = new TextEditingController();
-  final scaffoldKey = new GlobalKey<ScaffoldState>();
+   final  scaffoldKey = new GlobalKey<ScaffoldState>();
 
   BuildContext myContext;
 
@@ -21,10 +21,9 @@ class _LoginLogoutState extends State<LoginLogout> {
 
   @override
   Widget build(BuildContext context) {
-    this.myContext=context;
+    this.myContext = context;
 
     return Scaffold(
-
       key: scaffoldKey,
       backgroundColor: Colors.deepOrangeAccent,
       //Theme.of(context).primaryColor
@@ -70,8 +69,8 @@ class _LoginLogoutState extends State<LoginLogout> {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.of(context).push(new MaterialPageRoute(
-                    builder: (MyContext)=>SignUp()));
+                Navigator.of(context).push(
+                    new MaterialPageRoute(builder: (MyContext) => SignUp()));
               },
               child: Text(
                 "Kayıt olmak için tıkla!",
@@ -98,14 +97,16 @@ class _LoginLogoutState extends State<LoginLogout> {
 
     displayProggressDialog(context);
 
-   String response = await appMethod.logginUser(email: emailCont.text.toLowerCase(),password: passwordCont.text.toLowerCase());
-   if (response==successful){
-     closeProggressDialog(context);
-     showSnackBar("Giriş başarılı\n  "+response, scaffoldKey);
-     Navigator.of(context).pop();
-   }else {
-     closeProggressDialog(context);
-     showSnackBar(response, scaffoldKey);
-   }
+    String response = await appMethod.logginUser(
+        email: emailCont.text.toLowerCase(),
+        password: passwordCont.text.toLowerCase());
+    if (response == successful) {
+      closeProggressDialog(context);
+      showSnackBar("Giriş başarılı\n  " + response, scaffoldKey);
+      Navigator.of(context).pop(true);
+    } else {
+      closeProggressDialog(context);
+      showSnackBar(response, scaffoldKey);
+    }
   }
 }

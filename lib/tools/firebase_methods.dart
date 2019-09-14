@@ -36,15 +36,14 @@ class FireBaseMethods implements AppMethods {
         writeDataLocally(key: emailAddres, value: email);
         writeDataLocally(key: userPassword, value: password);
       }
-
     } on PlatformException catch (e) {
       // print(e.details);
-      return("Bilinmeyen bir hata oluştu,\n internetinizi kontrol edip tekrar deneyiniz");
+      return ("Bilinmeyen bir hata oluştu,\n internetinizi kontrol edip tekrar deneyiniz");
     }
 
     return user == null
         ? errorMSG(
-        "Bilinmeyen bir hata oluştu,\n internetinizi kontrol edip tekrar deneyiniz")
+            "Bilinmeyen bir hata oluştu,\n internetinizi kontrol edip tekrar deneyiniz")
         : succesfullMSG();
   }
 
@@ -56,6 +55,17 @@ class FireBaseMethods implements AppMethods {
     try {
       user = await auth.signInWithEmailAndPassword(
           email: email, password: password);
+
+      if (user != null) {
+        DocumentSnapshot userInfo = await getUserInfo(user.uid);
+        await writeDataLocally(key: userID, value: userInfo[userID]);
+        await writeDataLocally(
+            key: userFullName, value: userInfo[userFullName]);
+        await writeDataLocally(key: emailAddres, value: userInfo[emailAddres]);
+        await writeDataLocally(key: phoneNumber, value: userInfo[phoneNumber]);
+        await writeDataLocally(key: photoURL, value: userInfo[photoURL]);
+        await writeBoolDataLocally(key: loggedIn, value: true);
+      }
     } on PlatformException catch (e) {
       // print(e.details);
       if (e.message == "The email address is badly formatted.") {
@@ -67,7 +77,9 @@ class FireBaseMethods implements AppMethods {
         return errorMSG(
             " Böyle bir kullanıcı bulunmamaktadır.\nLütfen Kaydolunuz.\n" +
                 e.message);
-      }else return("Bilinmeyen bir hata oluştu,\n internetinizi kontrol edip tekrar deneyiniz");
+      } else {
+        return ("Bilinmeyen bir hata oluştu,\n internetinizi kontrol edip tekrar deneyiniz");
+      }
     }
 
     return user == null
@@ -90,5 +102,19 @@ class FireBaseMethods implements AppMethods {
 
   Future<String> succesfullMSG() async {
     return successful;
+  }
+
+  @override
+  Future<bool> logOutUser() async {
+    // TODO: implement logOutUser
+    await auth.signOut();
+    await clearDataLocally();
+    return complete();
+  }
+
+  @override
+  Future<DocumentSnapshot> getUserInfo(String userid) async {
+    // TODO: implement getUserInfo
+    return await fireStore.collection(usersData).document(userid).get();
   }
 }

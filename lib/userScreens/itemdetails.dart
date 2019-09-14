@@ -4,13 +4,14 @@ import 'cart.dart';
 
 class ItemDetail extends StatefulWidget {
   String itemName;
+  String itemDescription;
   double itemPrice;
   String itemImage;
   String itemSubName;
   double itemRating;
 
   ItemDetail(this.itemName, this.itemPrice, this.itemImage, this.itemRating,
-      this.itemSubName);
+      this.itemSubName,this.itemDescription);
 
   @override
   _ItemDetailState createState() => _ItemDetailState();
@@ -85,7 +86,7 @@ class _ItemDetailState extends State<ItemDetail> {
                             height: 10.0,
                           ),
                           new Text(
-                            "Malzeme içeriğimiz",
+                            widget.itemDescription,
                             style: new TextStyle(
                                 fontSize: 14.0, fontWeight: FontWeight.w400),
                           ),

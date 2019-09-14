@@ -142,7 +142,7 @@ class _SignUpState extends State<SignUp> {
       closeProggressDialog(context);
      // showSnackBar("Kayıt başarılı\n  " + response, scaffoldKey);
       Navigator.of(context).pop();
-      Navigator.of(context).pop();
+      Navigator.of(context).pop(true);
     } else {
       closeProggressDialog(context);
       showSnackBar(response, scaffoldKey);
